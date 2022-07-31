@@ -22,7 +22,7 @@ function submitServerInfo(evt) {
 
     serverNameInput.value = '';
   }
-}
+} // tested
 
 // Create table row element and pass to appendTd function with input value
 function updateServerTable() {
@@ -38,7 +38,8 @@ function updateServerTable() {
 
     appendTd(newTr, curServer.serverName);
     appendTd(newTr, '$' + tipAverage.toFixed(2));
+    appendDeleteBtn(newTr);
 
     serverTbody.append(newTr);
   }
-}
+} // tested

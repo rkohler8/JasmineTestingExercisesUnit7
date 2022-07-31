@@ -28,7 +28,7 @@ function submitPaymentInfo(evt) {
     billAmtInput.value = '';
     tipAmtInput.value = '';
   }
-}
+} // tested
 
 // createCurPayment() will return undefined with negative or empty inputs
 // positive billAmt is required but tip can be 0
@@ -45,7 +45,7 @@ function createCurPayment() {
       tipPercent: calculateTipPercent(billAmt, tipAmt),
     }
   }
-}
+} // tested
 
 // Create table row element and pass to appendTd with input value
 function appendPaymentTable(curPayment) {
@@ -55,9 +55,10 @@ function appendPaymentTable(curPayment) {
   appendTd(newTr, '$' + curPayment.billAmt);
   appendTd(newTr, '$' + curPayment.tipAmt);
   appendTd(newTr, curPayment.tipPercent + '%');
+  appendDeleteBtn(newTr);              //  Added Delete Button
 
   paymentTbody.append(newTr);
-}
+} // tested
 
 // Create table row element and pass to appendTd with calculated sum of all payment
 function updateSummary() {
@@ -74,5 +75,5 @@ function updateSummary() {
   summaryTds[0].innerHTML = '$' + sumPaymentTotal('billAmt');
   summaryTds[1].innerHTML = '$' + sumPaymentTotal('tipAmt');
   summaryTds[2].innerHTML =  Math.round(tipPercentAvg) + '%';
-}
+} // tested
 
